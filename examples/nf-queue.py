@@ -17,13 +17,13 @@ nl = mnl.Socket(netlink.NETLINK_NETFILTER)
 
 
 def nfq_hdr_put(buf, nltype, queue_num):
-    nlh = mnl.Header(buf)
+    nlh = mnl.Nlmsghdr(buf)
     nlh.put_header()
-    nlh.type = (nfnl.NFNL_SUBSYS_QUEUE << 8) | nltype
-    nlh.flags = netlink.NLM_F_REQUEST
+    nlh.nlmsg_type = (nfnl.NFNL_SUBSYS_QUEUE << 8) | nltype
+    nlh.nlmsg_flags = netlink.NLM_F_REQUEST
 
     nfg = nlh.put_extra_header_as(nfnl.Nfgenmsg)
-    nfg.family = socket.AF_UNSPEC
+    nfg.nfgen_family = socket.AF_UNSPEC
     nfg.version = nfnl.NFNETLINK_V0
     nfg.res_id = socket.htons(queue_num)
 
