@@ -30,16 +30,16 @@ unimplement functions:
 
     /* message parsing function */
     struct nfqnl_msg_packet_hdr *nfq_get_msg_packet_hdr(struct nfq_data *nfad)
-    u_int32_t nfq_get_nfmark(struct nfq_data *nfad)
+    uint32_t nfq_get_nfmark(struct nfq_data *nfad)
     int nfq_get_timestamp(struct nfq_data *nfad, struct timeval *tv)
 
     /* return 0 if not set */
-    u_int32_t nfq_get_indev(struct nfq_data *nfad)
-    u_int32_t nfq_get_physindev(struct nfq_data *nfad)
-    u_int32_t nfq_get_outdev(struct nfq_data *nfad)
-    u_int32_t nfq_get_physoutdev(struct nfq_data *nfad)
-    int nfq_get_uid(struct nfq_data *nfad, u_int32_t *uid)
-    int nfq_get_gid(struct nfq_data *nfad, u_int32_t *gid)
+    uint32_t nfq_get_indev(struct nfq_data *nfad)
+    uint32_t nfq_get_physindev(struct nfq_data *nfad)
+    uint32_t nfq_get_outdev(struct nfq_data *nfad)
+    uint32_t nfq_get_physoutdev(struct nfq_data *nfad)
+    int nfq_get_uid(struct nfq_data *nfad, uint32_t *uid)
+    int nfq_get_gid(struct nfq_data *nfad, uint32_t *gid)
     struct nfqnl_msg_packet_hw *nfq_get_packet_hw(struct nfq_data *nfad)
     int nfq_get_payload(struct nfq_data *nfad, unsigned char **data)
     int nfq_snprintf_xml(char *buf, size_t len, struct nfq_data *tb, int flags)
