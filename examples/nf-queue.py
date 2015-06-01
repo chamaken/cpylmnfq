@@ -38,7 +38,7 @@ def nfq_send_verdict(queue_num, qid):
     nl.send_nlmsg(nlh)
 
 
-@mnl.header_cb
+@mnl.nlmsg_cb
 def queue_cb(nlh, tb):
     attr = nfq.nlmsg_parse(nlh)
     nfg = nlh.get_payload_as(nfnl.Nfgenmsg)
